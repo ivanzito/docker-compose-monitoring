@@ -1,0 +1,25 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, prometheus
+  prometheus:
+    metrics:
+      path: actuator/prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: observability
+
+logging:
+  level:
+    org:
+      springframework: DEBUG
+
+
+
